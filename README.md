@@ -96,7 +96,7 @@ It is useful to retarget the glove data to robot hands to perform similar motion
 - To run, launch the SDK first and then run the ROS2 launch file we provide.  If successful Pybullet will open and you will see the LEAP Hand moving in the GUI with your hand motions.
 
 <p align="center">
-  <img width="200" height="120" src="./release_media/pybullet.gif">
+  <img width="180" src="./release_media/pybullet.gif">
 </p>
 
 ## ROS2 + LEAP Hand
