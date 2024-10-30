@@ -5,7 +5,7 @@ While [Manus Meta](https://www.manus-meta.com/) natively supports [C++ SDK](http
 This repo adds these tools which we use with the [LEAP Hand](https://leaphand.com/) in many projects and demos including [Bimanual Dexterity for Complex Tasks](https://bidex-teleop.github.io/)  Please see Bidex for more videos.
 
 <p align="center">
-  <img width="320" height="180" src="./release_media/operator_tabletop_1.gif">
+  <img width="480" height="270" src="./release_media/operator_tabletop_1.gif">
 </p>
 
 The code is similar to the released [C++ SDK by Manus](https://docs.manus-meta.com/2.4.0/Plugins/SDK/), but adds [ZMQ bindings](https://github.com/zeromq/cppzmq/tree/master) to get the useful glove data in ROS2 and then a [Pybullet](https://pybullet.org/wordpress/) based [SDLS](https://mathweb.ucsd.edu/~sbuss/ResearchWeb/ikmethods/SdlsPaper.pdf) retargeter which converts this data to LEAP Hands.
