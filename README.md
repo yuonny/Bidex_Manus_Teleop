@@ -1,6 +1,6 @@
-## Unofficial Python/ROS2 library for Manus Meta Gloves
+## Unofficial Python or ROS2 library for Manus Meta Gloves
 
-While [Manus Meta](https://www.manus-meta.com/) natively supports [C++ SDK](https://docs.manus-meta.com/2.4.0/Plugins/SDK/), there is no Python/ROS2 bindings or retargeting code to robot hands.  
+While [Manus Meta](https://www.manus-meta.com/) natively supports [C++ SDK](https://docs.manus-meta.com/2.4.0/Plugins/SDK/), there is no Python or ROS2 bindings or retargeting code to robot hands.  
 
 This repo adds these tools which we use with the [LEAP Hand](https://leaphand.com/) in many projects and demos including [Bimanual Dexterity for Complex Tasks](https://bidex-teleop.github.io/)  Please see Bidex for more videos.
 
@@ -12,7 +12,7 @@ The code is similar to the released [C++ SDK by Manus](https://docs.manus-meta.c
 
 This is tested on our [Quantum Mocap Metagloves](https://docs.manus-meta.com/2.4.0/Products/Quantum%20Mocap%20Metagloves/) on SDK 2.4 but should work on other Manus gloves.
 
-# Manus SDK -> ROS2/Python
+# Manus SDK Setup
 This sends the useful Manus data from the SDK to Python/ROS2 nodes, specifically `RawSkeletonInfo` is the fingertip data from MANUS and `Ergonomics` data is the approximate human skeleton joint angle data estimated by MANUS.
 
 Pick EITHER [Ubuntu Standalone](https://docs.manus-meta.com/2.4.0/Plugins/SDK/Linux/) (Only an Ubuntu machine required), or with [Windows as the Core gloves server](https://docs.manus-meta.com/2.4.0/Plugins/SDK/getting%20started/) and then connect to it with a second Ubuntu client machine.
@@ -80,8 +80,8 @@ Now to run the SDK:
 - If successful, the LEAP Hand will come to life similar to our conference demo as seen on the bottom of [https://leaphand.com/](https://leaphand.com/)
 - Note that this does not match the pinch grasps between the two hands but instead copies joint angles directly from the MANUS skeleton to LEAP Hand for simplicity.  The thumb will never be that good using this mode due to the differing kinematics of the two hands.
 
-# ROS2 + LEAP Hand Retargeting
-It is useful to retarget the glove data to robot hands to perform similar motions between the two hands.
+# ROS2 + LEAP Hand Retargeting Setup
+It is useful to retarget the glove data to robot hands to perform similar fingertip grasping between the two hands.
 - Inspired by [Robotic Telekinesis](https://robotic-telekinesis.github.io/) and [Dexcap](https://dex-cap.github.io/), this code retargets and solves for robot joint angles that matches the pinch grasps between the human and robot hands.
 - This retargeter takes the Manus Glove fingertip data, runs [SDLS](https://mathweb.ucsd.edu/~sbuss/ResearchWeb/ikmethods/SdlsPaper.pdf) from [Pybullet](https://pybullet.org/wordpress/) and then returns joint angles for the robot.
 - We provide examples using [LEAP Hand](https://leaphand.com/), but you can also import your own URDF/MJCF into Pybullet.
