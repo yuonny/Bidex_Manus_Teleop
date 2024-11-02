@@ -5,7 +5,7 @@ While [Manus Meta](https://www.manus-meta.com/) natively supports [C++ SDK](http
 This repo adds these tools which we use with the [LEAP Hand](https://leaphand.com/) in many projects and demos including [Bimanual Dexterity for Complex Tasks](https://bidex-teleop.github.io/)  Please see Bidex for more videos.
 
 <p align="center">
-  <img width="480" height="270" src="./release_media/operator_tabletop_1.gif">
+  <img width="480" height="270" src="./readme_media/operator_tabletop_1.gif">
 </p>
 
 The code is similar to the released [C++ SDK by Manus](https://docs.manus-meta.com/2.4.0/Plugins/SDK/), but adds [ZMQ bindings](https://github.com/zeromq/cppzmq/tree/master) to get the useful glove data in ROS2 and then a [Pybullet](https://pybullet.org/wordpress/) based [SDLS](https://mathweb.ucsd.edu/~sbuss/ResearchWeb/ikmethods/SdlsPaper.pdf) retargeter which converts this data to LEAP Hands.
@@ -56,8 +56,8 @@ Now to run our MANUS SDK:
     - On the Windows machine and Ubuntu machines set the IP as the below images.
     - Make sure the Python/ROS2 file matches the IP address you select for the Windows machine and the IPs on each machine are different.  
     <p align="center">
-        <img width="250" src="./release_media/windows_instructions.PNG">
-        <img width="265" src="./release_media/ubuntu_instructions.png"> 
+        <img width="250" src="./readme_media/windows_instructions.PNG">
+        <img width="265" src="./readme_media/ubuntu_instructions.png"> 
     </p>
 
 Now to run the SDK:
@@ -89,22 +89,30 @@ It is useful to retarget the glove data to robot hands to perform similar motion
 
 ### ROS2 Setup
 - If not already installed, follow [ROS2 Installation Instructions](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html) to install ROS2.
-- The code we provide is a ROS2 Node/Package.  It must live inside of a ROS2 workspace.  If you do not have an existing ROS2 Workspace then [create a workspace](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html).
-- Copy our provided package into your workspace and build the workspace.  See [ROS2 Tutorial](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html) for further help and then rebuild your workspace using colcon.
+- The code we provide is two ROS2 Node/Packages:
+    - `Glove` gets the glove data
+    - `Telekinesis` performs the inverse kinematics
+- It must live inside of a ROS2 workspace.  If you do not have an existing ROS2 Workspace then [create a workspace](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html).
+- Copy our two provided packages into your workspace and build the workspace.  See [ROS2 Tutorial](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html) for further help and then rebuild your workspace using colcon.
 - Install Python zmq by doing `pip install pyzmq`
 - The glove serial numbers in the ROS2 Python node should match your gloves. (Number is on Manus Core or printed by the SDK)
-- To run, launch the SDK first and then run the ROS2 launch file we provide.  If successful Pybullet will open and you will see the LEAP Hand moving in the GUI with your hand motions.
+- To run, launch the Manus C++ SDK first and then run the ROS2 launch file we provide called `leap_v1_ik.py` If successful Pybullet will open and you will see the LEAP Hand moving in the GUI with your hand motions.
 
 <p align="center">
-  <img width="180" src="./release_media/pybullet.gif">
+  <img width="180" src="./readme_media/pybullet.gif">
 </p>
 
 ### ROS2 + LEAP Hand
 - To run on the real [LEAP Hand](https://leaphand.com/), run our MANUS SDK first, then this ROS2 node and then the LEAP hand ROS2 node from the [LEAP Hand API](https://github.com/leap-hand/LEAP_Hand_API).
 
 <p align="center">
-  <img width="320" height="180" src="./release_media/drill1.gif">
+  <img width="320" height="180" src="./readme_media/drill1.gif">
 </p>
+
+### Extensions and Licensing
+- Feel free to fork this repository and add your own robot hands.  The code is compatible with many robot hands.  You will need the URDF/MJCF of the hand available if you are using IK.
+- If you find issues/bugs please feel free to open a Github Issue.
+- This is based off of the Manus Meta SDK.  Our tools are released under the MIT license.  See License.md for details.
 
 ## Citing
 If you find this codebase or [LEAP Hand](https://leaphand.com/) useful in your research, please cite: 
@@ -125,11 +133,12 @@ If you find this codebase or [LEAP Hand](https://leaphand.com/) useful in your r
 }
 ```
 
-Thank you to MANUS, Maarten Witteveen and Sarah Shaban for all of the help with the gloves.
+Thank you to MANUS Meta, Maarten Witteveen and Sarah Shaban for all of the help with their gloves.
+
 
 <p align="center">
     <a href="https://www.manus-meta.com/">
-        <img width="320" height="120" src="./release_media/powered_by_manus.png">
+        <img width="320" height="120" src="./readme_media/powered_by_manus.png">
     </a>
 </p>
 
