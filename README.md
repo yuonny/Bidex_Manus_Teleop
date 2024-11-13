@@ -32,7 +32,6 @@ You need a license from Manus to use the SDK to use this software.
 - NOTE: The .so files are not included in Github so they must be downloaded from Manus directly via their SDK Download, use the integrated version. This library is located in the ManusSDK/lib folder of the SDK package.  Rename the libManusSDK_Integrated.so to libManusSDK.so and replace the original libManusSDK.so in the ManusSDK/lib folder.
 - Instead of compiling the default sdk you download from them, compile our version but use the same instructions. (Note -lzmq has been added to the makefile that we provide) `Make (Option 1)` works well.
 
-- Check the python ZMQ address is `tcp://127.0.0.1:8000` (This is default)
 
 Now to run our version of the MANUS SDK:
 
@@ -40,6 +39,7 @@ Now to run our version of the MANUS SDK:
 - Pick standalone `1 Core Integrated` by pressing 1.
 - The data should stream successfully via ZMQ. 
 - Run the Python or the ROS2 script on the Linux machine.   See those sections to setup Python or ROS2.
+- Check the python/ROS2 ZMQ address is `tcp://127.0.0.1:8000` (This is default) whenever you run using just one computer.
 
 ### Windows Manus Core -> Ubuntu
 - Install [Manus Core 2.4](https://docs.manus-meta.com/2.4.0/Software/) and setup the gloves there
