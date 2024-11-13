@@ -29,10 +29,12 @@ You need a license from Manus to use the SDK to use this software.
     cmake ..
     sudo make -j4 install
     ```
-- Instead of compiling the default sdk you download from them, compile ours but use the same instructions. (Note -lzmq has been added to the makefile) Make (Option 1) works well.
+- NOTE: The .so files are not included in Github so they must be downloaded from Manus directly via their SDK Download, use the integrated version. This library is located in the ManusSDK/lib folder of the SDK package.  Rename the libManusSDK_Integrated.so to libManusSDK.so and replace the original libManusSDK.so in the ManusSDK/lib folder.
+- Instead of compiling the default sdk you download from them, compile our version but use the same instructions. (Note -lzmq has been added to the makefile) Make (Option 1) works well.
+
 - Check the python ZMQ address is `tcp://127.0.0.1:8000` (This is default)
 
-Now to run our MANUS SDK:
+Now to run our version of the MANUS SDK:
 
 - Run the [C++ (not minimal client) SDK](https://docs.manus-meta.com/2.4.0/Plugins/SDK/) with `./SDKClient_Linux.out`
 - Pick standalone `1 Core Integrated` by pressing 1.
