@@ -29,7 +29,7 @@ You need a license from Manus to use the SDK to use this software.
     cmake ..
     sudo make -j4 install
     ```
-- NOTE: The .so files are not included in Github so they must be downloaded from Manus directly via their SDK Download, use the integrated version. This library is located in the ManusSDK/lib folder of the SDK package.  Rename the libManusSDK_Integrated.so to libManusSDK.so and replace the original libManusSDK.so in the ManusSDK/lib folder.
+- NOTE: The .so files are not included in this Github so they must be downloaded from Manus directly via their SDK Download, use the integrated version of the .so files from them. This library is located in the ManusSDK/lib folder of the SDK package.  Rename the libManusSDK_Integrated.so to libManusSDK.so and replace the original libManusSDK.so in the ManusSDK/lib folder.
 - Instead of compiling the default sdk you download from them, compile our version but use the same instructions. (Note -lzmq has been added to the makefile that we provide) `Make (Option 1)` works well.
 
 
