@@ -111,6 +111,9 @@ It is useful to retarget the glove data to robot hands to perform similar finger
   <img width="320" height="180" src="./readme_media/drill1.gif">
 </p>
 
+### SteamVR
+- To run the SteamVr baseline as in the paper, please see the SteamVR folder on how to set this up on Windows or Ubuntu.
+
 ### Extensions and Licensing
 - Feel free to fork this repository and add your own robot hands.  The code is compatible with many robot hands.  You will need the URDF/MJCF of the hand available if you are using IK.
 - If you find issues/bugs please feel free to open a Github Issue.
