@@ -21,7 +21,7 @@ Ubuntu only is more useful for robotics, but Windows is better supported by [Man
 
 You need a license from Manus to use the SDK to use this software.
 ### Ubuntu Standalone 
-- Follow [Manus' instructions][https://docs.manus-meta.com/2.4.0/Plugins/SDK/Linux/](https://docs.manus-meta.com/2.4.0/Plugins/SDK/Linux/) and install "Core Integrated" dependencies without Docker.
+- Follow [Manus' instructions](https://docs.manus-meta.com/2.4.0/Plugins/SDK/Linux/) and install "Core Integrated" dependencies without Docker.
 - Install [cppzmq](https://github.com/zeromq/cppzmq/tree/master). (This is a dependency for our SDK version)  I recommend this guide from cppzmq:
     ```
     sudo apt-get install libzmq3-dev
