@@ -21,8 +21,7 @@ Ubuntu only is more useful for robotics, but Windows is better supported by [Man
 
 You need a license from Manus to use the SDK to use this software.
 ### Ubuntu Standalone 
-- Follow [Manus' instructions](https://docs.manus-meta.com/2.4.0/Plugins/SDK/Linux/) and install "Core Integrated" dependencies without Docker.
-- Install [cppzmq](https://github.com/zeromq/cppzmq/tree/master). (This is a dependency for our SDK version)  I recommend this guide from cppzmq:
+- Install [cppzmq](https://github.com/zeromq/cppzmq/tree/master). (This is a dependency for our version of the Manus SDK)  I recommend this guide from cppzmq:
     ```
     sudo apt-get install libzmq3-dev
     download and unzip the lib, cd to directory
@@ -31,6 +30,7 @@ You need a license from Manus to use the SDK to use this software.
     cmake ..
     sudo make -j4 install
     ```
+- Follow [Manus' instructions](https://docs.manus-meta.com/2.4.0/Plugins/SDK/Linux/) and install "Core Integrated" dependencies without Docker.
 - NOTE: The .so file is not included in this Github so they must be downloaded from Manus directly via their SDK Download, use the integrated version of the .so files from them. This library is located in the ManusSDK/lib folder of the SDK package.  Rename the libManusSDK_Integrated.so to libManusSDK.so from Manus and put that libManusSDK.so in the ManusSDK/lib folder of our repo.
 - Instead of compiling the default sdk you download from them, compile our version but use the same instructions. (Note -lzmq has been added to the makefile that we provide) `Make (Option 1)` works well.
 
