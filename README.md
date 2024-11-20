@@ -31,9 +31,8 @@ You need a license from Manus to use the SDK to use this software.
     sudo make -j4 install
     ```
 - Follow [Manus' instructions](https://docs.manus-meta.com/2.4.0/Plugins/SDK/Linux/) and install "Core Integrated" dependencies without Docker.
-- NOTE: The .so file is not included in this Github so they must be downloaded from Manus directly via their SDK Download, use the integrated version of the .so files from them. This library is located in the ManusSDK/lib folder of the SDK package.  Rename the libManusSDK_Integrated.so to libManusSDK.so from Manus and put that libManusSDK.so in the ManusSDK/lib folder of our repo.
 - Instead of compiling the default sdk you download from them, compile our version but use the same instructions. (Note -lzmq has been added to the makefile that we provide) `Make (Option 1)` works well.
-
+- Development note: I am using the "integrated version" of the .so file in the ManusSDK/lib folder of the SDK package.  It was renamed from libManusSDK_Integrated.so to libManusSDK.so from Manus and copied to the ManusSDK/lib folder of our repo.
 
 Now to run our version of the MANUS SDK:
 
