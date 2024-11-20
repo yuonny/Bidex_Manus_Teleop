@@ -32,7 +32,6 @@ You need a license from Manus to use the SDK to use this software.
     ```
 - Follow [Manus' instructions](https://docs.manus-meta.com/2.4.0/Plugins/SDK/Linux/) and install "Core Integrated" dependencies without Docker.
 - Instead of compiling the default sdk you download from them, compile our version of the SDK but use the same instructions. (Note -lzmq has been added to the makefile that we provide) `Make (Option 1)` works well.
-- Development note: I am using the "integrated version" of the .so file in the ManusSDK/lib folder of the SDK package.  It was renamed from libManusSDK_Integrated.so to libManusSDK.so from Manus and copied to the ManusSDK/lib folder of our repo as they instruct in their instructions.
 
 Now to run our version of the MANUS SDK:
 
@@ -117,8 +116,9 @@ It is useful to retarget the glove data to robot hands to perform similar finger
 
 ### Extensions and Licensing
 - Feel free to fork this repository and add your own robot hands.  The code is compatible with many robot hands.  You will need the URDF/MJCF of the hand available if you are using IK.
+- Development note: I am using the "integrated version" of the .so file in the ManusSDK/lib folder of the SDK package.  It was renamed from libManusSDK_Integrated.so to libManusSDK.so from Manus and copied to the ManusSDK/lib folder of our repo as they instruct in their instructions.
 - If you find issues/bugs please feel free to open a Github Issue.
-- This is based off of the Manus Meta SDK.  Our tools are released under the MIT license.  See License.md for details.
+- This is based off of the Manus Meta SDK 2.4 and we will try to keep it updated.  Our tools are released under the MIT license.  See License.md for details.
 
 ## Citing
 If you find this codebase or [LEAP Hand](https://leaphand.com/) useful in your research, please cite: 
