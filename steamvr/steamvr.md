@@ -26,7 +26,7 @@ SteamVR requires >4GB disk space
 
 5. Install pyopenvr
 
-`sudo pip install -U pip openvr`
+`pip install -U pip openvr`
 
 6. Clone triad_openvr in a working directory
 
