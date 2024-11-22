@@ -36,7 +36,7 @@ SteamVR requires >4GB disk space
 
 `gedit ~/.steam/steam/steamapps/common/SteamVR/resources/settings/default.vrsettings`
 
-   1. Change the third line from `"requireHmd" : true,` to `"requireHmd" : false,`
+   1. Change the third line from `"requireHmd" : true,` to `"requireHmd" : false,`, `"forcedDriver": "",` to `"forcedDriver": "null",` and `"activateMultipleDrivers": false,` to "activateMultipleDrivers": true, .
 
    1. Save and exit the settings document.
 
