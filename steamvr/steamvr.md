@@ -1,4 +1,4 @@
-This tutorial will guide you through the setup of the HTC Vive Tracker in Python 3.6 on Ubuntu 14.04.
+This tutorial will guide you through the setup of the HTC Vive Tracker.  Verified on Python 3.10 on Ubuntu 22.
 
 
 # Prerequesites
