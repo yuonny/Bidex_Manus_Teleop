@@ -14,6 +14,7 @@ context = zmq.Context()
 #Socket to talk to Manus SDK
 print("Connecting to SDK")
 socket = context.socket(zmq.PULL)
+socket.setsockopt(zmq.CONFLATE, True)     
 socket.connect("tcp://localhost:8000")
 
 '''

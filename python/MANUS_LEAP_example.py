@@ -86,6 +86,7 @@ class ZMQSubscriber:
     def __init__(self):
         context = zmq.Context()
         self.socket = context.socket(zmq.PULL)
+        self.socket.setsockopt(zmq.CONFLATE, True)     
         self.socket.connect("tcp://localhost:8000")
         self._subscriber_thread = threading.Thread(target=self._update_value)
         self._subscriber_thread.start()

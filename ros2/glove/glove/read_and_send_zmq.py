@@ -22,9 +22,9 @@ class GloveReader(Node):
         super().__init__('glove_reader')
         #Connect to Server
         context = zmq.Context()
-        self.socket = context.socket(zmq.PULL)
-        self.socket.connect(IP_ADDRESS)
-
+        self.socket = context.socket(zmq.PULL)  
+        self.socket.setsockopt(zmq.CONFLATE, True)     
+        self.socket.connect(IP_ADDRESS)       
         self.pub_left = self.create_publisher(JointState, "/glove/l_joints", 10)
         self.pub_right = self.create_publisher(JointState, "/glove/r_joints", 10)
 
@@ -61,7 +61,7 @@ class GloveReader(Node):
         #short_idx = [3, 4, 8, 9, 13, 14, 18, 19, 23, 24] 
         ##Right now the integrated mode is in a different ordering, pinky, thumb, index, ring, middle
         ##Will be fixed to match the SDK in a future release
-        short_idx = [23, 24, 3, 4, 8, 9, 18, 19, 13, 14] 
+        short_idx = [23, 24, 4, 5, 9, 10, 19, 20, 14, 15] 
         for i in short_idx:
             position = Point(x=float(data[1 + i*7]), y=float(data[2 + i*7]), z=float(data[3 + i*7]))  #the first ID is right or left glove don't forget
             orientation = Quaternion(x=float(0), y=float(0), z=float(0), w=float(0))
