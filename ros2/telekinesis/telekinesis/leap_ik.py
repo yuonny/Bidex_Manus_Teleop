@@ -46,7 +46,7 @@ class LeapPybulletIK(Node):
             ##You may have to set this path for your setup on ROS2
             self.LeapId = p.loadURDF(
                 path_src,
-                [-0.05, -0.03, -0.14],
+                [-0.05, -0.03, -0.125],
                 p.getQuaternionFromEuler([0, 1.57, 1.57]),
                 useFixedBase = True
             )
