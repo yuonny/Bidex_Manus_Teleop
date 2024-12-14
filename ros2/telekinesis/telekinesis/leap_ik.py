@@ -18,7 +18,7 @@ Inspired by Dexcap https://dex-cap.github.io/ by Wang et. al. and Robotic Teleki
 '''
 class LeapPybulletIK(Node):
     def __init__(self):
-        super().__init__('leap_pyb_ik')  
+        super().__init__('pyb_ik')  
         # start pybullet
         #clid = p.connect(p.SHARED_MEMORY)
         #clid = p.connect(p.DIRECT)
