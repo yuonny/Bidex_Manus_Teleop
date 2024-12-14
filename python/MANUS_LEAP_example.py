@@ -3,6 +3,9 @@ import zmq
 import threading
 import time
 
+#this is the particular portion that does the teleoperating 
+
+
 ##Import LEAP Hand
 from leap_hand_utils.dynamixel_client import *
 import leap_hand_utils.leap_hand_utils as lhu

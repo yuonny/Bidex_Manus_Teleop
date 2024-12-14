@@ -16,7 +16,7 @@ Note how the fingertip positions are matching, but the joint angles between the 
 
 Inspired by Dexcap https://dex-cap.github.io/ by Wang et. al. and Robotic Telekinesis by Shaw et. al.
 '''
-class LeapPybulletIK(Node):
+class PybulletIK(Node):
     def __init__(self):
         super().__init__('pyb_ik')  
         # start pybullet
@@ -29,32 +29,24 @@ class LeapPybulletIK(Node):
         self.is_left = self.declare_parameter('isLeft', False).get_parameter_value().bool_value
         self.glove_to_leap_mapping_scale = 1.6
         self.leapEndEffectorIndex = [3, 4, 8, 9, 13, 14, 18, 19]
-        if self.is_left:
-            path_src = os.path.join(path_src, "ros2/telekinesis/robot_hand/robot.urdf")
-            ##You may have to set this path for your setup on ROS2
-            self.LeapId = p.loadURDF(
-                path_src,
-                [-0.05, -0.03, -0.25],
-                p.getQuaternionFromEuler([0, 1.57, 1.57]),
-                useFixedBase = True
-            )
+        
+        path_src = os.path.join(path_src, "ros2/telekinesis/robot_hand/robot.urdf")
+        ##You may have to set this path for your setup on ROS2
+        self.LeapId = p.loadURDF(
+            path_src,
+            [-0.05, -0.03, -0.25],
+            p.getQuaternionFromEuler([0, 1.57, 1.57]),
+            useFixedBase = True
+        )
                
-        #this is leap hand specific and may require us to move around 
+        #this is leap hand specific and may require us to change
+        if self.is_left:
             self.pub_hand = self.create_publisher(JointState, '/leaphand_node/cmd_allegro_left', 10)
             self.sub_skeleton = self.create_subscription(PoseArray, "/glove/l_short", self.get_glove_data, 10)
-       ##################
-        else:
-            path_src = os.path.join(path_src, "leap_hand_mesh_right/robot_pybullet.urdf")
-            ##You may have to set this path for your setup on ROS2
-            self.LeapId = p.loadURDF(
-                path_src,
-                [-0.05, -0.03, -0.125],
-                p.getQuaternionFromEuler([0, 1.57, 1.57]),
-                useFixedBase = True
-            )
-            
+        else:  
             self.pub_hand = self.create_publisher(JointState, '/leaphand_node/cmd_allegro_right', 10)
             self.sub_skeleton = self.create_subscription(PoseArray, "/glove/r_short", self.get_glove_data, 10)
+       ##################
 
         self.numJoints = p.getNumJoints(self.LeapId)
         p.setGravity(0, 0, 0)
@@ -176,12 +168,12 @@ class LeapPybulletIK(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    leappybulletik = LeapPybulletIK()
-    rclpy.spin(leappybulletik)
+    pybulletik = PybulletIK()
+    rclpy.spin(pybulletik)
     # Destroy the node explicitly
     # (optional - otherwise it will be done automatically
     # when the garbage collector destroys the node object)
-    leappybulletik.destroy_node()
+    pybulletik.destroy_node()
     rclpy.shutdown()
 
 if __name__ == "__main__":
