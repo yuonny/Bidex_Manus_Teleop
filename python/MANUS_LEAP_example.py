@@ -131,5 +131,4 @@ if __name__ == "__main__":
             right[9] = 1.5 * right[9]
             right[12] = 1.5 * right[12]
             right[13] = 1.5 * right[13] + np.deg2rad(90)
-            leap_node.set_allegro(right)
-        time.sleep(0.03)
+   

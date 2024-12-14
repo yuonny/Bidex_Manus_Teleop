@@ -41,7 +41,9 @@ class PybulletIK(Node):
                
         #this is leap hand specific and may require us to change
         if self.is_left:
+            #writing to /leaphand_node/cmd_allegro_left
             self.pub_hand = self.create_publisher(JointState, '/leaphand_node/cmd_allegro_left', 10)
+            #reading from /glove/l_short
             self.sub_skeleton = self.create_subscription(PoseArray, "/glove/l_short", self.get_glove_data, 10)
         else:  
             self.pub_hand = self.create_publisher(JointState, '/leaphand_node/cmd_allegro_right', 10)
