@@ -27,7 +27,7 @@ class PybulletIK(Node):
         path_src = os.path.abspath(__file__)
         path_src = os.path.dirname(path_src)
         self.is_left = self.declare_parameter('isLeft', False).get_parameter_value().bool_value
-        self.glove_to_leap_mapping_scale = 1.6
+        self.glove_to_leap_mapping_scale = 1.6 #map our own
         self.leapEndEffectorIndex = [3, 4, 8, 9, 13, 14, 18, 19]
         
         path_src = os.path.join(path_src, "ros2/telekinesis/robot_hand/robot.urdf")
@@ -41,8 +41,8 @@ class PybulletIK(Node):
                
         #this is leap hand specific and may require us to change
         if self.is_left:
-            #writing to /leaphand_node/cmd_allegro_left
-            self.pub_hand = self.create_publisher(JointState, '/leaphand_node/cmd_allegro_left', 10)
+            #writing to /leaphand_node/cmd_allegro_left (not entirely sure what the allegro part is)
+            self.pub_hand = self.create_publisher(JointState, '/hand_node/cmd_allegro_left', 10) #allegro joint
             #reading from /glove/l_short
             self.sub_skeleton = self.create_subscription(PoseArray, "/glove/l_short", self.get_glove_data, 10)
         else:  

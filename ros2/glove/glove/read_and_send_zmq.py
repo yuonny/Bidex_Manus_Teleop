@@ -25,9 +25,10 @@ class GloveReader(Node):
         self.socket = context.socket(zmq.PULL)  
         self.socket.setsockopt(zmq.CONFLATE, True)     
         self.socket.connect(IP_ADDRESS)       
+        #10 is the number of data held in the jointstate
         self.pub_left = self.create_publisher(JointState, "/glove/l_joints", 10)
         self.pub_right = self.create_publisher(JointState, "/glove/r_joints", 10)
-
+        #in this case just the one
         self.pub_skeleton_right_full = self.create_publisher(PoseArray, '/glove/r_full', 1)
         self.pub_skeleton_left_full = self.create_publisher(PoseArray, '/glove/l_full', 1)
 
@@ -94,7 +95,7 @@ def main(args=None):
                     glove_reader.pub_left.publish(stater_msg)
                     stater_msg.position = list(map(float,data[20:40]))
                     glove_reader.pub_right.publish(stater_msg)
-                #If full skeleton data two hands
+                #If full skeleton data two hands 
                 elif len(data) == 352:
                     glove_reader.parse_full_skeleton_and_send(data[0:176])
                     glove_reader.parse_full_skeleton_and_send(data[176:352])
