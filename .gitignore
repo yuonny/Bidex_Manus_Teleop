@@ -26,3 +26,4 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+ros2/telekinesis/robot_hand/assets/
