@@ -35,6 +35,7 @@ def parse_full_skeleton(data):
         print("Serial Number not found: " + str(data[0]))
 while True:
     #wait for message
+    print("hello")
     message = socket.recv()
     #receive the message from the socket
     message = message.decode('utf-8')
@@ -54,5 +55,4 @@ while True:
 if __name__ == "__main__":
     print("hello")
     parse_full_skeleton()
-
 
