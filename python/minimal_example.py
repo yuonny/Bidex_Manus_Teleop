@@ -8,7 +8,7 @@ Keep in mind this data runs VERY fast, I would not recommend directly setting ro
 '''
 
 left_glove_sn = "60f3738b"
-right_glove_sn = "1310912"
+right_glove_sn = "BCCDF6EF"
 
 context = zmq.Context()
 #Socket to talk to Manus SDK
