@@ -54,5 +54,5 @@ while True:
         
 if __name__ == "__main__":
     parse_full_skeleton()
-    time.sleep(3)
+    time.sleep(100)
 
