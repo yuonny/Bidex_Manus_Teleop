@@ -27,7 +27,7 @@ I highly recommend you visuzlize this data, it makes it much easier to figure th
 def parse_full_skeleton(data):
     if data[0] == left_glove_sn:
         print("Left Glove Skeleton Data")
-        print(list(map(float,data[1:]))
+        print(list(map(float,data[1:])))
     elif data[0] == right_glove_sn:
         print("Right Glove Skeleton Data")
         print(list(map(float,data[1:])))
