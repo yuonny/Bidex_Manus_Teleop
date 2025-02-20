@@ -8,7 +8,7 @@ Keep in mind this data runs VERY fast, I would not recommend directly setting ro
 '''
 
 left_glove_sn = "60f3738b"
-right_glove_sn = "BCCDF6EF"
+right_glove_sn = "1310912"
 
 context = zmq.Context()
 #Socket to talk to Manus SDK
@@ -32,10 +32,25 @@ def parse_full_skeleton(data):
         print("Right Glove Skeleton Data")
         print(list(map(float,data[1:])))
     else:
-        print("Serial Number not found: " + str(data[0]))
+        print("Serial Number not found: " + str(data[0] message from the socket
+    message = message.decode('utf-8')
+    #print("Received reply %s" % (message))
+    data = message.split(",")   
+    if len(data) == 40:
+        print("Left Glove Joint-level Ergonomics Data:")
+        print(list(map(float,data[0:20])))
+        print("Right Glove Joint-level Ergonomics Data:")
+        print(list(map(float,data[20:40])))
+    elif len(data) == 352:
+        parse_full_skeleton(data[0:176])
+        parse_full_skeleton(data[176:352])
+    elif len(data) == 176:
+        parse_full_skeleton(data[0:176])
+        
+if __name__ == "__main__":
+    parse_full_skeleton()))
 while True:
     #wait for message
-    print("hello")
     message = socket.recv()
     #receive the message from the socket
     message = message.decode('utf-8')
@@ -53,6 +68,5 @@ while True:
         parse_full_skeleton(data[0:176])
         
 if __name__ == "__main__":
-    print("hello")
     parse_full_skeleton()
 
