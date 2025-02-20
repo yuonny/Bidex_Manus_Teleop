@@ -33,7 +33,7 @@ def parse_full_skeleton(data):
         print("Right Glove Skeleton Data")
         print(list(map(float,data[1:])))
     else:
-        print("Serial Number not found: " + str(data[0] message from the socket
+        print("Serial Number not found: " + str(data[0]) + " message from the socket")
     message = message.decode('utf-8')
     #print("Received reply %s" % (message))
     data = message.split(",")   
