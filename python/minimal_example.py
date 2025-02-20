@@ -1,4 +1,5 @@
 import zmq
+import time
 
 '''
 This is a minimal Python example that talks to our MANUS C++ SDK and prints the data out directly to the terminal.
@@ -41,6 +42,7 @@ def parse_full_skeleton(data):
         print(list(map(float,data[0:20])))
         print("Right Glove Joint-level Ergonomics Data:")
         print(list(map(float,data[20:40])))
+        delay()
     elif len(data) == 352:
         parse_full_skeleton(data[0:176])
         parse_full_skeleton(data[176:352])
@@ -69,4 +71,5 @@ while True:
         
 if __name__ == "__main__":
     parse_full_skeleton()
+    time.sleep(3)
 
