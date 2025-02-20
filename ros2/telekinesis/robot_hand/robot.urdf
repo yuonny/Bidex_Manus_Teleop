@@ -1,3 +1,4 @@
+<!-- Change the path of the meshes -->
 <?xml version="1.0" encoding="utf-8"?>
 <!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
@@ -27,7 +28,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/base_link.STL" />
+          filename="assets/base_link.STL" />
       </geometry>
       <material
         name="">
@@ -41,7 +42,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/base_link.STL" />
+          filename="assets/base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -78,7 +79,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Thumb_CMC.STL" />
+          filename="assets/Thumb_CMC.STL" />
       </geometry>
       <material
         name="">
@@ -92,7 +93,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Thumb_CMC.STL" />
+          filename="assets/Thumb_CMC.STL" />
       </geometry>
     </collision>
   </link>
@@ -136,7 +137,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Thumb_MCP.STL" />
+          filename="assets/Thumb_MCP.STL" />
       </geometry>
       <material
         name="">
@@ -150,7 +151,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Thumb_MCP.STL" />
+          filename="assets/Thumb_MCP.STL" />
       </geometry>
     </collision>
   </link>
@@ -194,7 +195,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Thumb_IP.STL" />
+          filename="assets/Thumb_IP.STL" />
       </geometry>
       <material
         name="">
@@ -208,7 +209,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Thumb_IP.STL" />
+          filename="assets/Thumb_IP.STL" />
       </geometry>
     </collision>
   </link>
@@ -252,7 +253,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Index_Below_MCP.STL" />
+          filename="assets/Index_Below_MCP.STL" />
       </geometry>
       <material
         name="">
@@ -266,7 +267,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Index_Below_MCP.STL" />
+          filename="assets/Index_Below_MCP.STL" />
       </geometry>
     </collision>
   </link>
@@ -310,7 +311,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Index_MCP.STL" />
+          filename="assets/Index_MCP.STL" />
       </geometry>
       <material
         name="">
@@ -324,7 +325,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Index_MCP.STL" />
+          filename="assets/Index_MCP.STL" />
       </geometry>
     </collision>
   </link>
@@ -368,7 +369,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Index_PIP.STL" />
+          filename="assets/Index_PIP.STL" />
       </geometry>
       <material
         name="">
@@ -382,7 +383,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Index_PIP.STL" />
+          filename="assets/Index_PIP.STL" />
       </geometry>
     </collision>
   </link>
@@ -426,7 +427,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Index_DIP.STL" />
+          filename="assets/Index_DIP.STL" />
       </geometry>
       <material
         name="">
@@ -440,7 +441,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Index_DIP.STL" />
+          filename="assets/Index_DIP.STL" />
       </geometry>
     </collision>
   </link>
@@ -484,7 +485,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Middle_MCP.STL" />
+          filename="assets/Middle_MCP.STL" />
       </geometry>
       <material
         name="">
@@ -498,7 +499,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Middle_MCP.STL" />
+          filename="assets/Middle_MCP.STL" />
       </geometry>
     </collision>
   </link>
@@ -542,7 +543,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Middle_PIP.STL" />
+          filename="assets/Middle_PIP.STL" />
       </geometry>
       <material
         name="">
@@ -556,7 +557,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Middle_PIP.STL" />
+          filename="assets/Middle_PIP.STL" />
       </geometry>
     </collision>
   </link>
@@ -600,7 +601,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Middle_DIP.STL" />
+          filename="assets/Middle_DIP.STL" />
       </geometry>
       <material
         name="">
@@ -614,7 +615,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Middle_DIP.STL" />
+          filename="assets/Middle_DIP.STL" />
       </geometry>
     </collision>
   </link>
@@ -658,7 +659,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Ring_Below_MCP.STL" />
+          filename="assets/Ring_Below_MCP.STL" />
       </geometry>
       <material
         name="">
@@ -672,7 +673,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Ring_Below_MCP.STL" />
+          filename="assets/Ring_Below_MCP.STL" />
       </geometry>
     </collision>
   </link>
@@ -716,7 +717,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Ring_MCP.STL" />
+          filename="assets/Ring_MCP.STL" />
       </geometry>
       <material
         name="">
@@ -730,7 +731,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Ring_MCP.STL" />
+          filename="assets/Ring_MCP.STL" />
       </geometry>
     </collision>
   </link>
@@ -774,7 +775,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Ring_PIP.STL" />
+          filename="assets/Ring_PIP.STL" />
       </geometry>
       <material
         name="">
@@ -788,7 +789,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Ring_PIP.STL" />
+          filename="assets/Ring_PIP.STL" />
       </geometry>
     </collision>
   </link>
@@ -832,7 +833,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Ring_DIP.STL" />
+          filename="assets/Ring_DIP.STL" />
       </geometry>
       <material
         name="">
@@ -846,7 +847,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Ring_DIP.STL" />
+          filename="assets/Ring_DIP.STL" />
       </geometry>
     </collision>
   </link>
@@ -890,7 +891,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Pinky_Below_MCP.STL" />
+          filename="assets/Pinky_Below_MCP.STL" />
       </geometry>
       <material
         name="">
@@ -904,7 +905,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Pinky_Below_MCP.STL" />
+          filename="assets/Pinky_Below_MCP.STL" />
       </geometry>
     </collision>
   </link>
@@ -948,7 +949,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Pinky_MCP.STL" />
+          filename="assets/Pinky_MCP.STL" />
       </geometry>
       <material
         name="">
@@ -962,7 +963,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Pinky_MCP.STL" />
+          filename="assets/Pinky_MCP.STL" />
       </geometry>
     </collision>
   </link>
@@ -1006,7 +1007,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Pinky_PIP.STL" />
+          filename="assets/Pinky_PIP.STL" />
       </geometry>
       <material
         name="">
@@ -1020,7 +1021,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Pinky_PIP.STL" />
+          filename="assets/Pinky_PIP.STL" />
       </geometry>
     </collision>
   </link>
@@ -1064,7 +1065,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Pinky_DIP.STL" />
+          filename="assets/Pinky_DIP.STL" />
       </geometry>
       <material
         name="">
@@ -1078,7 +1079,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://NEW_HAND_7_14/meshes/Pinky_DIP.STL" />
+          filename="assets/Pinky_DIP.STL" />
       </geometry>
     </collision>
   </link>
