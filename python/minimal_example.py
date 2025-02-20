@@ -52,5 +52,7 @@ while True:
         parse_full_skeleton(data[0:176])
         
 if __name__ == "__main__":
+    print(¨hello¨)
     parse_full_skeleton()
+
 
