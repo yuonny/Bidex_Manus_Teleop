@@ -51,8 +51,4 @@ while True:
         parse_full_skeleton(data[176:352])
     elif len(data) == 176:
         parse_full_skeleton(data[0:176])
-        
-if __name__ == "__main__":
-    parse_full_skeleton()
-    time.sleep(100)
 
