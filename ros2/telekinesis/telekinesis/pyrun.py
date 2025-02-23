@@ -52,18 +52,21 @@ while True:
 import os
 import pybullet as p
 
+# class PybIk is used to calc IK eventually, im just testing out how to modify it to match our hand 
 class PybIk:
     def __init__(self):
         # Start PyBullet
         p.connect(p.GUI)
         
-        # Load right leap hand      
+        # This just gets the correct path to the robot hand dont worry too much abot it 
         path_src = os.path.abspath(__file__)
         path_src = os.path.dirname(path_src)
         path_src = os.path.join(path_src, "../robot_hand", "robot_pybullet.urdf")
 
-        self.glove_to_leap_mapping_scale = 1.6  # Map our own
+        self.glove_to_leap_mapping_scale = 1.6  # Mapping scale (dont know what to change here )
+        
         #last portion of the robot that moves which in our case is the DIPs 
+        #each number relates to the corresponding place in the array that holds the DIP information 
         self.leapEndEffectorIndex = [3, 7, 10, 14, 18]
         
         # Load the URDF file
@@ -74,6 +77,7 @@ class PybIk:
             useFixedBase=True
         )
         
+        #just sets up the sumulation 
         self.numJoints = p.getNumJoints(self.robotId)
         p.setGravity(0, 0, 0)
         useRealTimeSimulation = 0
@@ -92,6 +96,7 @@ class PybIk:
         baseMass = 0.001
         basePosition = [0.25, 0.25, 0]
         
+        # this array holds the information of the 5 balls which is accessed later
         self.ballMbt = []
         for i in range(0, 5):
             self.ballMbt.append(p.createMultiBody(baseMass=baseMass, baseCollisionShapeIndex=ball_shape, basePosition=basePosition))  # for base and finger tip joints    
@@ -104,6 +109,7 @@ class PybIk:
         p.changeVisualShape(self.ballMbt[3], -1, rgbaColor=[1, 1, 1, 1])
         p.changeVisualShape(self.ballMbt[4], -1, rgbaColor=[1, 0, 1, 1])
 
+    # this is just so i can zoom in and out of the pybullet (z key to move in, x to move out )
     def update_camera(self, cameraDistance):
         p.resetDebugVisualizerCamera(
             cameraDistance=cameraDistance,
@@ -111,6 +117,7 @@ class PybIk:
             cameraPitch=-30,
             cameraTargetPosition=[0, 0, 0]
         )
+        
     # here is where they map the balls to the fingers end DIP
     def update_target_vis(self):
         for i, joint_idx in enumerate(self.leapEndEffectorIndex): # for every joint that is considered the end 
