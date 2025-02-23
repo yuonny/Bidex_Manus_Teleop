@@ -26,13 +26,12 @@ class PybulletIK(Node):
         # load right leap hand      
         path_src = os.path.abspath(__file__)
         path_src = os.path.dirname(path_src)
-        self.is_left = self.declare_parameter('isLeft', False).get_parameter_value().bool_value
+        path_src = os.path.join(path_src, "../robot_hand", "robot_pybullet.urdf")
+    
         self.glove_to_leap_mapping_scale = 1.6 #map our own
         self.leapEndEffectorIndex = [3, 4, 8, 9, 13, 14, 18, 19]
-        
-        path_src = os.path.join(path_src, "ros2/telekinesis/robot_hand/robot.urdf")
-        ##You may have to set this path for your setup on ROS2
-        self.LeapId = p.loadURDF(
+                ##You may have to set this path for your setup on ROS2
+        self.robotId = p.loadURDF(
             path_src,
             [-0.05, -0.03, -0.25],
             p.getQuaternionFromEuler([0, 1.57, 1.57]),
@@ -50,7 +49,7 @@ class PybulletIK(Node):
             self.sub_skeleton = self.create_subscription(PoseArray, "/glove/r_short", self.get_glove_data, 10)
        ##################
 
-        self.numJoints = p.getNumJoints(self.LeapId)
+        self.numJoints = p.getNumJoints(self.robotId)
         p.setGravity(0, 0, 0)
         useRealTimeSimulation = 0
         p.setRealTimeSimulation(useRealTimeSimulation)
@@ -66,7 +65,7 @@ class PybulletIK(Node):
         basePosition = [0.25, 0.25, 0]
         
         self.ballMbt = []
-        for i in range(0,4):
+        for i in range(0,5):
             self.ballMbt.append(p.createMultiBody(baseMass=baseMass, baseCollisionShapeIndex=ball_shape, basePosition=basePosition)) # for base and finger tip joints    
             no_collision_group = 0
             no_collision_mask = 0
@@ -75,6 +74,7 @@ class PybulletIK(Node):
         p.changeVisualShape(self.ballMbt[1], -1, rgbaColor=[0, 1, 0, 1]) 
         p.changeVisualShape(self.ballMbt[2], -1, rgbaColor=[0, 0, 1, 1])  
         p.changeVisualShape(self.ballMbt[3], -1, rgbaColor=[1, 1, 1, 1])
+        p.changeVisualShape(self.ballMbt[4], -1, rgbaColor=[1, 0, 1, 1])
         
     def update_target_vis(self, hand_pos):
         _, current_orientation = p.getBasePositionAndOrientation( self.ballMbt[0])
